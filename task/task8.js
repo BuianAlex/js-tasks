@@ -68,9 +68,37 @@ var registrationTests = [
 
 
 function registration(names) {
-    //TODO
-}
+    let dataBase = [];
+    let expectedResult =[];
+    let namesLen = names.length;
+    for(let i=0; i<namesLen;i++){
+        let findRes = dataBase.find(function (element) {
+            return element === names[i];
+        });
+        if (findRes=== undefined){
+            dataBase.push(names[i]);
+            expectedResult.push('OK');           
+        }
+        else{
+            let j=0;
+            let fClone ='';
+            while (fClone !== undefined) {
+                j++;
+                let www = names[i]+j;
+                fClone = dataBase.find(function (element) {
+                    return element === names[i]+j;
+                });
+                
+            }
+            dataBase.push(names[i]+j); 
+            expectedResult.push(names[i] + j);        
+        }
 
+    }
+    return expectedResult;
+    //TODO
+
+}
 
 tasks.push({
     title: "Система регистрации",
