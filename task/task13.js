@@ -31,8 +31,13 @@ var chatTest = [
 
 function chat(s) {
     //TODO
+    var patt = /h+e+l{2,}o/i;
+    var result = patt.test(s);
+    return result.toString()
+;
 }
 
+chat("ahhellllloou");
 
 tasks.push({
     title: "Чат",
