@@ -44,9 +44,34 @@ var capsLockTests = [
 
 
 function capsLock(str) {
+    let words = str.split(/\s+/g);
+    let result =[];
+    let FuNkY = false;
+    words.forEach((element)=>{
+        let ww='';
+        if (/^([A-Z][a-z]){1,}([!]*)/.test(element)){
+            FuNkY =true
+        }
+        if (FuNkY ===true ){
+            ww = element.replace(/^([a-z])([A-Z])([!]*)$/, function (match, p1, p2) {
+                return [p1.toUpperCase(), p2.toLowerCase()].join('');
+            })
+        }
+        else{
+            ww = element
+            .replace(/^([a-z])([A-Z]{1,})([!]*)/, function (match, p1, p2, p3) {
+                return [p1.toUpperCase(), p2.toLowerCase()].join('');
+            })
+            .replace(/^([A-Z])([A-Z]{1,})([!]*)/, function (match, p1, p2, p3) {
+                return [p1.toLowerCase(), p2.toLowerCase()].join('');
+            })
+        } 
+        result.push(ww); 
+    });
+    return result.join(' ');
     //TODO
 }
-
+capsLock("FuNkY iS nOt CaPs!");
 
 tasks.push({
     title: "cAPS lOCK",

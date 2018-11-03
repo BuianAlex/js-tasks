@@ -33,8 +33,7 @@ function chat(s) {
     //TODO
     var patt = /h+e+l{2,}o/i;
     var result = patt.test(s);
-    return result.toString()
-;
+    return result.toString();
 }
 
 
