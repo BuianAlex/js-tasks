@@ -37,7 +37,6 @@ function chat(s) {
 ;
 }
 
-chat("ahhellllloou");
 
 tasks.push({
     title: "Чат",

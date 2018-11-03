@@ -47,8 +47,16 @@ var doubleColaTests = [
 
 
 function doubleCola(n) {
+    let line =  ["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"];
+    for(let i =0; i<n;i++){
+        let nameToDouble = line[i];
+        line.push(nameToDouble);
+        line.push(nameToDouble);
+    }
+    return line[n-1];
     //TODO
 }
+
 
 
 tasks.push({
