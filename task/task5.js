@@ -55,8 +55,13 @@ var luckyNumberTests = [
 
 
 function luckyNumber(number) {
+    let result = /[4,7]{7,}/.test(number);
+    return result;
+
     //TODO
 }
+
+
 
 
 tasks.push({
