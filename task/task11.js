@@ -31,9 +31,23 @@ var firstStepsTests = [
 
 
 function firstSteps(arr) {
+    let goodDays = 1;
+    let goodPeriod = 0; 
+    let totalDays = arr.length;
+    for (let index = 1; index < totalDays; index++) {
+        if (arr[index-1] <= arr[index]){
+            goodDays ++;
+            if (goodPeriod < goodDays){
+                goodPeriod = goodDays;
+            }            
+        }
+        else{
+            goodDays =1;
+        }       
+    }
+    return goodPeriod;
     //TODO
 }
-
 
 tasks.push({
     title: "Кефа и первые шаги",
