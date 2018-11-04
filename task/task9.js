@@ -27,12 +27,24 @@ var dragonCountTests = [
         parameters: [2, 3, 4, 5, 24],
         expectedResult: 17
     }
-];
+]; 
 
 
 function dragonCount(k, l, m, n, d) {
+    let injured = 0;
+    for(let i=1; i<=d; i++){
+        // let kk = i%k;
+        // let ll = i%l;
+        // let mm = i%m;
+        // let nn = i%n;
+        if (i % k === 0 || i % l === 0 || i % m === 0 || i % n===0){
+            injured++;
+        }
+    }
+    return injured; 
     //TODO
 }
+dragonCount(2, 3, 4, 5, 24); 
 
 
 tasks.push({
